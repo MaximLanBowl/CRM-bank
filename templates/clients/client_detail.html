@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Детали клиента</h1>
+<table class="table">
+    <tr>
+        <th>Имя</th>
+        <td>{{ object.name }}</td>
+    </tr>
+    <tr>
+        <th>Почта</th>
+        <td>{{ object.email }}</td>
+    </tr>
+    <tr>
+        <th>Телефон</th>
+        <td>{{ object.phone }}</td>
+    </tr>
+    <tr>
+        <th>Дополнительная информация</th>
+        <td>{{ object.notes }}</td>
+    </tr>
+    <tr>
+        <p>Файлы клиента: <a href="{% url 'clients:client_files' object.pk %}">Просмотреть</a></p>
+    </tr>
+</table>
+<a href="{% url 'clients:client_update' object.pk %}" class="btn btn-primary">Редактировать</a>
+<a href="{% url 'clients:client_delete' object.pk %}" class="btn btn-danger">Удалить</a>
+{% endblock %}

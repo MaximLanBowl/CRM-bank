@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Детали напоминания</h1>
+  <p>Название: {{ object.title }}</p>
+  <p>Дата: {{ object.date }}</p>
+  <p>Время: {{ object.time }}</p>
+  <p>Клиент: {{ object.client.name }}</p>
+  <a href="{% url 'reminders:reminder_update' pk=object.pk %}">Редактировать</a>
+  <a href="{% url 'reminders:reminder_delete' pk=object.pk %}">Удалить</a>
+{% endblock %}

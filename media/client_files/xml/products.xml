@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Смарт-экспресс - официальный сайт</title>
+        <style>
+            body {
+                text-align: center;
+            }
+            h2 {
+
+                color: red;
+            }
+            * {
+                font-family: Arial, Helvetica, sans-serif
+            }
+            h1 {
+                background-color: lightgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Смарт-экспресс - официальный сайт</h1>
+        <h2>Сайт находится в разработке</h2>
+        Пишите нам в <a href="https://web.telegram.org/a/#778969917" target="_blank">Телеграмм</a>
+
+    </body>
+</html>
+
+
+

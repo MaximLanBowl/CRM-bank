@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Файлы клиента: {{ client.name }}</h1>
+{% if client.pdf_file %}
+<p>PDF файл: <a href="{{ client.pdf_file.url }}">Скачать</a></p>
+{% endif %}
+{% if client.xml_file %}
+<p>XML файл: <a href="{{ client.xml_file.url }}">Скачать</a></p>
+{% endif %}
+{% if client.word_file %}
+<p>Word файл: <a href="{{ client.word_file.url }}">Скачать</a></p>
+{% endif %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="pdf_file">
+    <input type="file" name="xml_file">
+    <input type="file" name="word_file">
+    <button type="submit">Загрузить файлы</button>
+</form>
+{% endblock %}
