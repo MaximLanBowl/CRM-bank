@@ -1,0 +1,8 @@
+2024-06-10 15:21:28,621 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2024-06-10 15:22:38,513 [WARNING] django.request: Not Found: /clients/8/
+2024-06-10 15:22:38,636 [WARNING] django.request: Not Found: /favicon.ico
+2024-06-10 15:24:06,129 [WARNING] django.request: Not Found: /blog/article/latest/feed/
+2024-06-10 15:24:18,234 [WARNING] django.request: Not Found: /blog/article/latest/feed/
+2024-06-10 15:30:05,901 [WARNING] django.request: Not Found: /clients/8/
+2024-06-10 15:34:18,245 [WARNING] django.request: Not Found: /blog/article/latest/feed/
+2024-06-10 20:31:00,426 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
