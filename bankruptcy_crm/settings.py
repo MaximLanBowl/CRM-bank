@@ -29,7 +29,8 @@ ALLOWED_HOSTS = [
     '0.0.0.0',
     '127.0.0.1',
     '45.89.190.67',
-    '*'
+    '*',
+    'localhost'
 ] + os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
 INTERNAL_IPS = [
     "127.0.0.1",
