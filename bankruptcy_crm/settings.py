@@ -89,11 +89,11 @@ WSGI_APPLICATION = 'bankruptcy_crm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'CRM_SERG',
-        'USER': 'postgres',
+        'NAME': 'CRM-bank',
+        'USER': 'gen_user',
         'PASSWORD': 'maxlan1403',
         'HOST': 'localhost',
-        'PORT': 5434
+        'PORT': 5432
     }
 }
 # Password validation
