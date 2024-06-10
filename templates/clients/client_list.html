@@ -12,7 +12,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for client in object_list %}
+            {% for client in clients %}
             <tr>
                 <td><a href="{% url 'clients:client_detail' client.pk %}">{{ client.name }}</a></td>
                 <td>{{ client.email }}</td>

@@ -3,7 +3,7 @@
 {% block content %}
   <h1>Список напоминаний</h1>
   <ul>
-    {% for reminder in object_list %}
+    {% for reminder in reminders %}
       <li>
         <a href="{% url 'reminders:reminder_detail' pk=reminder.pk %}">{{ reminder.title }}</a>
         <p>Дата: {{ reminder.date }}</p>

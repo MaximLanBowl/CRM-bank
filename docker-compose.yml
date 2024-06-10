@@ -13,8 +13,8 @@ services:
   db:
     image: postgres:13
     environment:
-      - POSTGRES_DB=CRM-bank
-      - POSTGRES_USER=gen_user
+      - POSTGRES_DB=CRM_SERG
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=maxlan1403
     volumes:
       - postgres_data:/var/lib/postgresql/data

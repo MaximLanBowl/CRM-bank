@@ -26,6 +26,9 @@ SECRET_KEY = 'django-insecure-_)@z=uu@l8cvgwz#gpcy91(gae%k%!0g+=6+km$s57k7v2a-#m
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = [
+    '0.0.0.0',
+    '127.0.0.1',
+    '45.89.190.67',
     '*'
 ] + os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
 INTERNAL_IPS = [
@@ -88,11 +91,11 @@ WSGI_APPLICATION = 'bankruptcy_crm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'CRM-bank',
-        'USER': 'gen_user',
+        'NAME': 'CRM_SERG',
+        'USER': 'postgres',
         'PASSWORD': 'maxlan1403',
         'HOST': 'localhost',
-        'PORT': 5432
+        'PORT': 5434
     }
 }
 # Password validation
