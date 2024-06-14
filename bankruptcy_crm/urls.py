@@ -18,13 +18,19 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from CRM.views import RegisterView, CustomLoginView, CustomLogoutView
 from bankruptcy_crm import settings
 
 urlpatterns = [
-    path('', include('clients.urls')),
+    path('', CustomLoginView.as_view(), name='login'),
+    path('clients/', include('clients.urls')),
     path('admin/', admin.site.urls),
     path('reminders/', include('reminders.urls')),
     path('clients/', include('clients.urls')),
     path('reports/', include('reports.urls')),
+    path('register/', RegisterView.as_view(), name='register'),
+    path('', CustomLoginView.as_view(), name='login'),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', CustomLogoutView.as_view(), name='logout'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
