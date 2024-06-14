@@ -12,13 +12,11 @@ class ReminderListView(ListView):
     model = Reminder
     template_name = 'reminders/reminder_list.html'
 
-    def get_queryset(self):
-        """
-        Возвращает список напоминаний, которые должны быть показаны в течение недели.
-        """
-        today = timezone.now().date()
-        one_week_from_now = today + timedelta(days=7)
-        return Reminder.objects.filter(date__range=[today, one_week_from_now])
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['reminders'] = self.get_queryset()
+        return context
+
 
 
 class ReminderCreateView(CreateView):
