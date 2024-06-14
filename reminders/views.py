@@ -1,5 +1,6 @@
 from datetime import timedelta
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.utils import timezone
 from django.views.generic import CreateView
@@ -8,7 +9,7 @@ from django.views.generic import ListView, UpdateView, DetailView, DeleteView
 from reminders.models import Reminder
 
 
-class ReminderListView(ListView):
+class ReminderListView(LoginRequiredMixin, ListView):
     model = Reminder
     template_name = 'reminders/reminder_list.html'
 
@@ -16,7 +17,6 @@ class ReminderListView(ListView):
         context = super().get_context_data(**kwargs)
         context['reminders'] = self.get_queryset()
         return context
-
 
 
 class ReminderCreateView(CreateView):

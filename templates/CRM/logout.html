@@ -1,0 +1,68 @@
+Конечно, я могу помочь Вам с этим. Давайте начнем с создания админки Django, авторизации и аутентификации для Вашего CRM-приложения.
+
+Создание админки Django:
+
+В Вашем models.py файле, импортируйте admin из django.contrib:
+from django.contrib import admin
+from .models import CustomUser
+
+admin.site.register(CustomUser)
+Создайте admin.py файл в Вашем приложении (если его еще нет) и добавьте следующий код:
+from django.contrib import admin
+from .models import CustomUser
+
+admin.site.register(CustomUser)
+Теперь Вы можете перейти в админку Django, используя URL /admin/ и войти с помощью суперпользователя, которого Вы создали при установке Django.
+Создание шаблонов и URL для авторизации и регистрации:
+
+В Вашем urls.py файле, добавьте следующие URL-адреса:
+from django.urls import path
+from .views import RegisterView, CustomLoginView, CustomLogoutView
+
+urlpatterns = [
+    path('register/', RegisterView.as_view(), name='register'),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', CustomLogoutView.as_view(), name='logout'),
+]
+Создайте шаблоны для регистрации, входа и выхода в templates/CRM/ папке:
+register.html:
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Register</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+</form>
+{% endblock %}
+login.html:
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Login</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</form>
+{% endblock %}
+logout.html:
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Logout</h1>
+<p>You have been logged out.</p>
+{% endblock %}
+Настройка авторизации и аутентификации:
+
+В Вашем settings.py файле, добавьте следующие настройки:
+AUTH_USER_MODEL = 'CRM.CustomUser'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Logout</h1>
+<p>You have been logged out.</p>
+{% endblock %}
