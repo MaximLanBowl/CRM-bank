@@ -8,6 +8,10 @@ from .models import Client
 class ClientListView(ListView):
     model = Client
     template_name = 'clients/client_list.html'
+    context_object_name = 'clients'
+
+    def get_queryset(self):
+        return Client.objects.all()
 
 
 class ClientCreateView(CreateView):
