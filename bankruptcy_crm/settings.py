@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     'django_apscheduler',
 
+    'CRM.apps.CrmConfig',
     'clients.apps.ClientsConfig',
     'reminders.apps.RemindersConfig',
     'reports.apps.ReportsConfig'
@@ -83,6 +84,10 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTH_USER_MODEL = 'CRM.CustomUser'
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/clients/'
 
 WSGI_APPLICATION = 'bankruptcy_crm.wsgi.application'
 
